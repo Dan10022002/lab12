@@ -66,7 +66,7 @@ cmake --build _builds --target test
 ```
 
 7. Изменим версию паектного менеджера на 1.7.0
-8. 
+
 ```sh
 cat $HUNTER_ROOT/cmake/configs/default.cmake | grep GTest<br/>
 cat $HUNTER_ROOT/cmake/projects/GTest/hunter.cmake<br/>
