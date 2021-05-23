@@ -47,26 +47,30 @@ gsed -i 's/gtest_main/GTest::main/' CMakeLists.txt
 
 5.Запустим компиляцию и сборку проекта
 
-_cmake -H. -B_builds -DBUILD_TESTS=ON<br/>
+```sh
+cmake -H. -B_builds -DBUILD_TESTS=ON<br/>
 cmake --build _builds<br/>
 cmake --build _builds --target test<br/>
-ls -la $HOME/.hunter_
+ls -la $HOME/.hunter
+```
 
 6. Склонируем пакетный менеджер hunter в домашнюю папку
 
-_git clone https://github.com/cpp-pm/hunter $HOME/projects/hunter<br/>
+```sh
+git clone https://github.com/cpp-pm/hunter $HOME/projects/hunter<br/>
 export HUNTER_ROOT=$HOME/projects/hunter<br/>
 rm -rf _builds<br/>
 cmake -H. -B_builds -DBUILD_TESTS=ON<br/>
 cmake --build _builds<br/>
-cmake --build _builds --target test_
+cmake --build _builds --target test
+```
 
 7. Изменим версию паектного менеджера на 1.7.0
-
-_cat $HUNTER_ROOT/cmake/configs/default.cmake | grep GTest<br/>
-cat $HUNTER_ROOT/cmake/projects/GTest/hunter.cmake<br/>
-mkdir cmake/Hunter_
+8. 
 ```sh
+cat $HUNTER_ROOT/cmake/configs/default.cmake | grep GTest<br/>
+cat $HUNTER_ROOT/cmake/projects/GTest/hunter.cmake<br/>
+mkdir cmake/Hunter
 cat > cmake/Hunter/config.cmake <<EOF
 hunter_config(GTest VERSION 1.7.0-hunter-9)
 EOF
