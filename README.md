@@ -20,7 +20,8 @@ git remote add origin https://github.com/${GITHUB_USERNAME}/lab07_
 3. Прописываем команды, необходимые для установки hunter
 
 _mkdir -p cmake<br/>
-wget https://raw.githubusercontent.com/cpp-pm/gate/master/cmake/HunterGate.cmake -O cmake/HunterGate.cmake<br/>
+wget https://raw.githubusercontent.com/cpp-pm/gate/master/cmake/HunterGate.cmake -O cmake/HunterGate.cmake_
+```sh
 gsed -i '/cmake_minimum_required(VERSION 3.4)/a\
 \
 include("cmake/HunterGate.cmake")\
@@ -29,5 +30,6 @@ HunterGate(\
     SHA1 "5659b15dc0884d4b03dbd95710e6a1fa0fc3258d"\
 )\
 ' CMakeLists.txt
+```
 
 ![travis](https://api.travis-ci.org/Dan10022002/lab07.svg?branch=master&status=passed)
