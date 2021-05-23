@@ -1,0 +1,10 @@
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/install/strip.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/edit_cache.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/package_source.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/install.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/list_install_components.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/rebuild_cache.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/package.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/install/local.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/demo.dir
+/home/dan/Dan10022002/workspace/projects/lab07/_builds/default/CMakeFiles/print.dir
