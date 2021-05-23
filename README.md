@@ -86,13 +86,43 @@ _docker build -t logger ._
 
 _docker images_
 
-6. 
-11. Заливаем на гитхаб
+6. Создаём директорию, куда будут записываться логи, и запускаем докер в интерактивном режиме
+
+_mkdir logs_
+```sh
+docker run -it -v "$(pwd)/logs/:/home/logs/" logger
+text1
+text2
+text3
+<C-D>
+```
+
+7. Смотрим внутреннее состояние контейнера
+
+_docker inspect logger_
+
+8. Смотрим логи
+
+_cat logs/log.txt_
+
+9. Редактируем .travis.yml, чтобы мы могли создавать на тревисе контейнер
+
+_vim .travis.yml_
+
+```sh
+language: generic
+services:
+- docker
+
+script:
+- docker build -t logger .
+```
+10. Заливаем на гитхаб
 
 _git add .<br/>
 git commit -m"added cpack config"<br/>
 git push origin master --tags_
 
-12. Авторизируемся на  https://travis-ci.org и запускаем тест сборки
+11. Авторизируемся на  https://travis-ci.org и запускаем тест сборки
 
-![travis](https://api.travis-ci.org/Dan10022002/lab07.svg?branch=master&status=passed)
+![travis](https://api.travis-ci.org/Dan10022002/lab08.svg?branch=master&status=passed)
