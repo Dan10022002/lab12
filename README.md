@@ -61,4 +61,74 @@ cmake -H. -B_builds -DBUILD_TESTS=ON<br/>
 cmake --build _builds<br/>
 cmake --build _builds --target test_
 
+7. Изменим версию паектного менеджера на 1.7.0
+
+_cat $HUNTER_ROOT/cmake/configs/default.cmake | grep GTest<br/>
+cat $HUNTER_ROOT/cmake/projects/GTest/hunter.cmake<br/>
+mkdir cmake/Hunter_
+```sh
+cat > cmake/Hunter/config.cmake <<EOF
+hunter_config(GTest VERSION 1.7.0-hunter-9)
+EOF
+```
+
+8. Добавим файл для демонстрации работы библиотеки print
+
+_mkdir demo_
+```sh
+cat > demo/main.cpp <<EOF
+#include <print.hpp>
+
+#include <cstdlib>
+
+int main(int argc, char* argv[])
+{
+  const char* log_path = std::getenv("LOG_PATH");
+  if (log_path == nullptr)
+  {
+    std::cerr << "undefined environment variable: LOG_PATH" << std::endl;
+    return 1;
+  }
+  std::string text;
+  while (std::cin >> text)
+  {
+    std::ofstream out{log_path, std::ios_base::app};
+    print(text, out);
+    out << std::endl;
+  }
+}
+EOF
+```
+
+9. Добавляем изменения в файл сборки
+
+```sh
+gsed -i '/endif()/a\
+\
+add_executable(demo ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp)\
+target_link_libraries(demo print)\
+install(TARGETS demo RUNTIME DESTINATION bin)\
+' CMakeLists.txt
+```
+
+10. Тестируем код с помощью утилиты polly
+
+_mkdir tools<br/>
+git submodule add https://github.com/ruslo/polly tools/polly<br/>
+tools/polly/bin/polly.py --test_
+
+![1](https://github.com/Dan10022002/lab07/blob/master/1.png)
+
+_tools/polly/bin/polly.py --install_
+
+![2](https://github.com/Dan10022002/lab07/blob/master/2.png)
+
+11. Создаём метку и заливаем на гитхаб
+
+_git add .<br/>
+git commit -m"added cpack config"<br/>
+git push origin master --tags_
+
+12. Авторизируемся на  https://travis-ci.org и запускаем тест сборки
+
 ![travis](https://api.travis-ci.org/Dan10022002/lab07.svg?branch=master&status=passed)
