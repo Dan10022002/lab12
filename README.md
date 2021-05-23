@@ -34,7 +34,7 @@ HunterGate(\
 
 4. Удаляем, добавленный в предыдущейй работе фреймфорк и добавляем работу с хантером в CMakeLists.txt
 
-_git rm -rf third-party/gtest
+_git rm -rf third-party/gtest_
 ```sh
 gsed -i '/set(PRINT_VERSION_STRING "v\${PRINT_VERSION}")/a\
 \
