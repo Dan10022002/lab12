@@ -1,4 +1,4 @@
-# Отчёт по lab08
+# Отчёт по lab12
 
 ## Tutorial
 
@@ -11,11 +11,11 @@ source scripts/activate_
 
 2. Клонируем репозиторий и изменияем URL
 
-_git clone https://github.com/${GITHUB_USERNAME}/lab07 projects/lab08<br/>
+_git clone https://github.com/${GITHUB_USERNAME}/lab07 projects/lab12<br/>
 cd projects/lab08<br/>
 git submodule update --init<br/>
 git remote remove origin<br/>
-git remote add origin https://github.com/${GITHUB_USERNAME}/lab08_
+git remote add origin https://github.com/${GITHUB_USERNAME}/lab12_
 
 3. Создаём файл Dockerfile и записываем в него информацию об образе, который будет использоваться, и командах, которые будут выполнены:
 
