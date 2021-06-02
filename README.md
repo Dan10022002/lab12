@@ -67,3 +67,5 @@ wc2w<C-V><ESC>
 _git add .<br/>
 git commit -m"refactoring"<br/>
 git push origin master_
+
+![vim](https://github.com/Dan10022002/lab12/blob/master/vim.png)
